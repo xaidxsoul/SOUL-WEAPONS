@@ -1,0 +1,15 @@
+name: SoulWeapons
+version: 1.0.0
+main: me.soulweapons.SoulWeapons
+api-version: '1.21.11'
+author: SoulWeapons
+description: Custom soul-powered weapons for Paper.
+commands:
+  soulweapons:
+    description: SoulWeapons admin command
+    usage: /soulweapons <give|list|reload>
+    aliases: [sw]
+permissions:
+  soulweapons.admin:
+    description: Allows use of SoulWeapons admin commands
+    default: op

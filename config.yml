@@ -1,0 +1,10 @@
+settings:
+  ability-cooldown-seconds: 8
+  lifesteal-heal: 2.0
+  lightning-radius: 6.0
+  dash-strength: 1.7
+messages:
+  prefix: "&8[&5SoulWeapons&8] "
+  no-permission: "&cYou don't have permission."
+  player-only: "&cThis command can only be used by a player."
+  reloaded: "&aConfiguration reloaded."
