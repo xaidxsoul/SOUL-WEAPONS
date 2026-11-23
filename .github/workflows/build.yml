@@ -1,0 +1,12 @@
+SoulWeapons/
+├── pom.xml
+├── README.md
+└── src/
+    └── main/
+        ├── java/
+        │   └── me/
+        │       └── soulweapons/
+        │           └── SoulWeapons.java
+        └── resources/
+            ├── plugin.yml
+            └── config.yml
