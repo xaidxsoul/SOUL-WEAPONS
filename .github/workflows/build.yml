@@ -1,12 +1,36 @@
-SoulWeapons/
-├── pom.xml
-├── README.md
-└── src/
-    └── main/
-        ├── java/
-        │   └── me/
-        │       └── soulweapons/
-        │           └── SoulWeapons.java
-        └── resources/
-            ├── plugin.yml
-            └── config.yml
+
+name: Build SoulWeapons
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'SoulWeapons-Ready-to-Build.zip'
+      - '.github/workflows/build.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract project
+        run: |
+          unzip SoulWeapons-Ready-to-Build.zip -d project
+          cp -a project/. .
+          rm -rf project
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Build plugin
+        run: mvn -B clean package
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SoulWeapons-JAR
+          path: target/*.jar
+          
