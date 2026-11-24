@@ -17,9 +17,7 @@ jobs:
 
       - name: Extract project
         run: |
-          unzip SoulWeapons-Ready-to-Build.zip -d project
-          cp -a project/. .
-          rm -rf project
+unzip SoulWeapons-Updated.zip -d project
 
       - uses: actions/setup-java@v4
         with:
